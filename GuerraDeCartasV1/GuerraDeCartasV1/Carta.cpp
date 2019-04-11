@@ -50,4 +50,5 @@ string Carta::getValorSimb() {
 void Carta::mostrarCarta() {
 	cout << "Valor: " << getValor() << endl;
 	cout << "Simbolo: " << getSimbolo() << endl;
+	cout << "-----------------" << endl;
 }
