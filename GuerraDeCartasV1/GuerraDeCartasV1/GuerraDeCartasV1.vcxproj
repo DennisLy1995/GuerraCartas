@@ -152,12 +152,16 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Carta.h" />
+    <ClInclude Include="ColaCartas.h" />
+    <ClInclude Include="ListaCartas.h" />
     <ClInclude Include="Nodo.h" />
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Carta.cpp" />
+    <ClCompile Include="ColaCartas.cpp" />
     <ClCompile Include="GuerraDeCartasV1.cpp" />
+    <ClCompile Include="ListaCartas.cpp" />
     <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
