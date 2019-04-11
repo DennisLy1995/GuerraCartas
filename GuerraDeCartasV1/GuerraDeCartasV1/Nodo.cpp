@@ -3,21 +3,19 @@
 #include <iostream>
 
 Nodo::Nodo() {
-	valor = 0;
-	sig = NULL;
 }
 
-Nodo::Nodo(int x) {
-	valor = x;
-	sig = NULL;
+Nodo::Nodo(Carta carta) {
+	this->carta = carta;
+	this->sig = NULL;
 }
 
-void Nodo::setValor(int x) {
-	valor = x;
+void Nodo::setCarta(Carta carta) {
+	this->carta = carta;
 }
 
-int Nodo::getValor() {
-	return valor;
+Carta Nodo::getCarta() {
+	return carta;
 }
 
 void Nodo::setSig(Nodo *x) {

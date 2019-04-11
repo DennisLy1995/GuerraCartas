@@ -1,16 +1,17 @@
 #pragma once
 #ifndef NODO_H
 #define NODO_H
+#include "Carta.h"
 class Nodo
 {
 private:
-	int valor;
+	Carta carta;
 	Nodo * sig;
 public:
 	Nodo();
-	Nodo(int x = 0);
-	void setValor(int);
-	int getValor(void);
+	Nodo(Carta);
+	void setCarta(Carta);
+	Carta getCarta(void);
 	void setSig(Nodo*);
 	Nodo * getSig(void);
 };
