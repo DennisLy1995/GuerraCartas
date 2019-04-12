@@ -1,6 +1,9 @@
 #include "pch.h"
 #include <iostream>
+#include "Jugador.h"
 using namespace std;
+
+void pruebaJugador(void); //solamente para prueba
 
 void mostrarMenu() {
 	cout << "Por favor, seleccione una de las siguientes opciones:" << endl;
@@ -37,5 +40,15 @@ int main()
 		opc = procesarOpcion(opc);
 
 	}
+}
 
+void pruebaJugador() { //Metodo solamente creado para probar que la sintaxis o funcionalidad funcionan
+	Jugador jugador;
+	Carta carta;
+	//Nodo* nodocarta;
+
+	/*nodocarta = jugador.getMazo()->tomarCarta();
+	nodocarta->getCarta();*/
+	
+	carta = jugador.getMazo()->tomarCarta()->getCarta();
 }

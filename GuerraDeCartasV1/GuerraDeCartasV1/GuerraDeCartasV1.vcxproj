@@ -153,14 +153,17 @@
   <ItemGroup>
     <ClInclude Include="Carta.h" />
     <ClInclude Include="ColaCartas.h" />
+    <ClInclude Include="Jugador.h" />
     <ClInclude Include="ListaCartas.h" />
     <ClInclude Include="Nodo.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="PilaCartas.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Carta.cpp" />
     <ClCompile Include="ColaCartas.cpp" />
     <ClCompile Include="GuerraDeCartasV1.cpp" />
+    <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="ListaCartas.cpp" />
     <ClCompile Include="Nodo.cpp" />
     <ClCompile Include="pch.cpp">
@@ -169,6 +172,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="PilaCartas.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

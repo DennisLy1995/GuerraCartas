@@ -17,6 +17,6 @@ public:
 	Nodo * getFinal(void);
 	bool esVacia();
 	void insertarCarta(Carta);
-	void tomarCarta();//atender
+	Nodo* tomarCarta();//atender
 };
 #endif // !COLACARTAS_H

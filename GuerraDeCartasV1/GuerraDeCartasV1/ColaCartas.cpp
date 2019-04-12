@@ -53,16 +53,20 @@ void ColaCartas::insertarCarta(Carta x) {
 	cout << "\nSe ha añadido la carta a la cola\n" << endl;
 }
 
-void ColaCartas::tomarCarta() {
+Nodo* ColaCartas::tomarCarta() {
+	Nodo* nodoCarta = NULL;
+
 	if (this->esVacia()) {
 		cout << "No hay cartas en la cola" << endl;
 	}
 	else {
 		Nodo * aux = getFrente();
-
+		nodoCarta = aux;
 		setFrente(aux->getSig());
 		aux->setSig(NULL);
 		delete aux;
 		longitud--;
 	}
+
+	return nodoCarta;
 }
