@@ -22,5 +22,6 @@ public:
 	void setValorSimb(string);
 	string getValorSimb(void);
 	void mostrarCarta(void);
+	static string siguienteSimbolo(int actual);
 };
 #endif // !CARTA_H

@@ -52,3 +52,26 @@ void Carta::mostrarCarta() {
 	cout << "Simbolo: " << getSimbolo() << endl;
 	cout << "-----------------" << endl;
 }
+
+string Carta::siguienteSimbolo(int actual)
+{
+	string simbolo = "";
+
+	switch (actual) {
+	case 1:
+		simbolo = "corazon";
+		break;
+	case 2:
+		simbolo = "Diamante";
+		break;
+	case 3:
+		simbolo = "trebol";
+		break;
+	case 4:
+		simbolo = "pica";
+		break;
+
+	}
+
+	return simbolo;
+}

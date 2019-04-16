@@ -23,32 +23,32 @@
     <ProjectGuid>{F22291DB-B34D-46DB-99E1-9ABF69D0732B}</ProjectGuid>
     <Keyword>Win32Proj</Keyword>
     <RootNamespace>GuerraDeCartasV1</RootNamespace>
-    <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
+    <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
     <ConfigurationType>Application</ConfigurationType>
     <UseDebugLibraries>false</UseDebugLibraries>
-    <PlatformToolset>v141</PlatformToolset>
+    <PlatformToolset>v142</PlatformToolset>
     <WholeProgramOptimization>true</WholeProgramOptimization>
     <CharacterSet>Unicode</CharacterSet>
   </PropertyGroup>
@@ -153,6 +153,7 @@
   <ItemGroup>
     <ClInclude Include="Carta.h" />
     <ClInclude Include="ColaCartas.h" />
+    <ClInclude Include="JuegoCartas.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="ListaCartas.h" />
     <ClInclude Include="Nodo.h" />
@@ -163,6 +164,7 @@
     <ClCompile Include="Carta.cpp" />
     <ClCompile Include="ColaCartas.cpp" />
     <ClCompile Include="GuerraDeCartasV1.cpp" />
+    <ClCompile Include="JuegoCartas.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="ListaCartas.cpp" />
     <ClCompile Include="Nodo.cpp" />
