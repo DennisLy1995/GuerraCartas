@@ -30,6 +30,7 @@ int main()
 int procesarOpcion(int posicion) {
 	int retorno = 0;
 	JuegoCartas* juego = new JuegoCartas();
+	
 
 	switch (posicion)
 	{
@@ -55,10 +56,16 @@ int procesarOpcion(int posicion) {
 void pruebaJugador() { //Metodo solamente creado para probar que la sintaxis o funcionalidad funcionan
 	Jugador jugador;
 	Carta carta;
+	ListaCartas* listaTemp = new ListaCartas();
+
+	Carta temp (1,1,"jajaja","jajajaja");
+	listaTemp->insertarCarta(temp);
+	listaTemp->mostrarListaCartas();
+
 	//Nodo* nodocarta;
 
 	/*nodocarta = jugador.getMazo()->tomarCarta();
 	nodocarta->getCarta();*/
 	
-	carta = jugador.getMazo()->tomarCarta()->getCarta();
+	//carta = jugador.getMazo()->tomarCarta()->getCarta();
 }

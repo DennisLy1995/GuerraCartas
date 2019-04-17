@@ -12,7 +12,7 @@ JuegoCartas::~JuegoCartas()
 {
 }
 
-ListaCartas JuegoCartas::getMasoOriginal()
+ListaCartas *JuegoCartas::getMasoOriginal()
 {
 	return masoOriginal;
 }
@@ -49,15 +49,15 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "A: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
-
+		
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "2: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -65,7 +65,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "3: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -73,7 +73,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "4: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -81,7 +81,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "5: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -89,7 +89,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "6: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -97,7 +97,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "7: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -105,7 +105,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "8: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -113,7 +113,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "9: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -122,7 +122,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "10: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -130,7 +130,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "J: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -138,7 +138,7 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "Q: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
 
@@ -146,11 +146,12 @@ bool JuegoCartas::GenerarMaso()
 			simbolo = Carta::siguienteSimbolo(a);
 			valorSimbolo = "K: " + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
-			this->getMasoOriginal().insertarCarta(*cartaTemp);
+			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
+		
 
-		this->getMasoOriginal().mostrarListaCartas();
+		masoOriginal->mostrarListaCartas();
 
 	}
 	catch (exception e) {

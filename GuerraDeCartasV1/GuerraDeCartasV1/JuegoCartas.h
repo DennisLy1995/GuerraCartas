@@ -10,7 +10,7 @@ class JuegoCartas
 public:
 	JuegoCartas();
 	~JuegoCartas();
-	ListaCartas getMasoOriginal();
+	ListaCartas* getMasoOriginal();
 	int getContador();
 	void setContador(int value);
 	void reiniciarContador();
@@ -20,6 +20,6 @@ public:
 	
 
 private:
-	ListaCartas masoOriginal;
+	ListaCartas* masoOriginal = new ListaCartas();
 	int contador;
 };
