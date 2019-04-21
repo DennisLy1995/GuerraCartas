@@ -183,6 +183,9 @@ void JuegoCartas::restarContador()
 
 Carta JuegoCartas::buscarCarta()
 {
+	Carta temp = masoOriginal->sacarCarta(52);
+	cout << "El valor se encontro: " <<temp.getValorSimb() << endl;
+
 	return Carta();
 }
 
