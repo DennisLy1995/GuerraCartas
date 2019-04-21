@@ -17,7 +17,8 @@ public:
 	bool GenerarMaso();
 	void sumarContador();
 	void restarContador();
-	Carta buscarCarta();
+	Carta buscarCarta(int carta);
+	void JugarGuerraCartas();
 	
 
 private:

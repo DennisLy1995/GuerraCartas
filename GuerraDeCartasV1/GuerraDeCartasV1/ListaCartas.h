@@ -16,5 +16,6 @@ public:
 	void insertarCarta(Carta); //insertar ordenado
 	void mostrarListaCartas();
 	Carta sacarCarta(int valor);
+	Carta buscarCarta(int valor);
 };
 #endif // !LISTACARTAS_H

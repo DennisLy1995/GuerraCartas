@@ -1,6 +1,7 @@
 #include "pch.h"
 #include "JuegoCartas.h"
 #include <iostream>
+#include <cstdlib>
 
 
 
@@ -33,12 +34,10 @@ void JuegoCartas::reiniciarContador()
 }
 
 
-
-
 bool JuegoCartas::GenerarMaso()
 {
 	int valorMaso = 1;
-	bool checker = false;
+	bool checker = true;
 	string simbolo = "";
 	string valorSimbolo = "";
 	Carta* cartaTemp = new Carta();
@@ -165,12 +164,6 @@ bool JuegoCartas::GenerarMaso()
 
 
 
-
-
-
-
-
-
 void JuegoCartas::sumarContador()
 {
 	contador++;
@@ -181,12 +174,36 @@ void JuegoCartas::restarContador()
 	contador--;
 }
 
-Carta JuegoCartas::buscarCarta()
+Carta JuegoCartas::buscarCarta(int carta)
 {
-	Carta temp = masoOriginal->sacarCarta(52);
-	cout << "El valor se encontro: " <<temp.getValorSimb() << endl;
+	Carta temp = masoOriginal->buscarCarta(carta);
 
 	return Carta();
+}
+
+void JuegoCartas::JugarGuerraCartas()
+{
+	bool breaker = false;
+	int cantJugadores = 0;
+	int numerosRandom = 0;
+	Carta temp;
+
+	while (breaker == false) {
+		if (cantJugadores < 2 || cantJugadores > 4) {
+			cout << "Ingrese la cantidad de jugadores (minimo 2 - maximo 4)" << endl;
+			cin >> cantJugadores;
+		}
+		else {
+			breaker = true;
+		}
+		
+	}
+
+	//Generar numeros random.
+
+	temp = masoOriginal->sacarCarta(45);
+	cout << "El numero random es: " << 1+ rand()%51 << endl;
+
 }
 
 
