@@ -49,7 +49,7 @@ string Carta::getValorSimb() {
 
 void Carta::mostrarCarta() {
 	cout << "Valor: " << getValor() << endl;
-	cout << "Simbolo: " << getSimbolo() << endl;
+	cout << "Carta: " << getValorSimb() << endl;
 	cout << "-----------------" << endl;
 }
 
@@ -59,16 +59,16 @@ string Carta::siguienteSimbolo(int actual)
 
 	switch (actual) {
 	case 1:
-		simbolo = "corazon";
+		simbolo = "Corazon";
 		break;
 	case 2:
 		simbolo = "Diamante";
 		break;
 	case 3:
-		simbolo = "trebol";
+		simbolo = "Trebol";
 		break;
 	case 4:
-		simbolo = "pica";
+		simbolo = "Pica";
 		break;
 
 	}

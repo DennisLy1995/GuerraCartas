@@ -17,6 +17,7 @@ public:
 	bool GenerarMaso();
 	void sumarContador();
 	void restarContador();
+	Carta buscarCarta();
 	
 
 private:

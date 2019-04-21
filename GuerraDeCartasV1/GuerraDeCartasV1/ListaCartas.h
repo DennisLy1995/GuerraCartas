@@ -15,5 +15,6 @@ public:
 	int getLong(void);
 	void insertarCarta(Carta); //insertar ordenado
 	void mostrarListaCartas();
+	Carta sacarCarta(int valor);
 };
 #endif // !LISTACARTAS_H

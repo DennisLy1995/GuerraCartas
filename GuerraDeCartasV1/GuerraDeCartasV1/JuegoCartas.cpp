@@ -47,7 +47,7 @@ bool JuegoCartas::GenerarMaso()
 		
 		for (int a = 1; a < 5;a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "A: " + simbolo;
+			valorSimbolo = "A-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -55,7 +55,7 @@ bool JuegoCartas::GenerarMaso()
 		
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "2: " + simbolo;
+			valorSimbolo = "2-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -63,7 +63,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "3: " + simbolo;
+			valorSimbolo = "3-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -71,7 +71,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "4: " + simbolo;
+			valorSimbolo = "4-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -79,7 +79,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "5: " + simbolo;
+			valorSimbolo = "5-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -87,7 +87,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "6: " + simbolo;
+			valorSimbolo = "6-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -95,7 +95,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "7: " + simbolo;
+			valorSimbolo = "7-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -103,7 +103,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "8: " + simbolo;
+			valorSimbolo = "8-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -111,7 +111,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "9: " + simbolo;
+			valorSimbolo = "9-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -120,7 +120,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "10: " + simbolo;
+			valorSimbolo = "10-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -128,7 +128,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "J: " + simbolo;
+			valorSimbolo = "J-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -136,7 +136,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "Q: " + simbolo;
+			valorSimbolo = "Q-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -144,7 +144,7 @@ bool JuegoCartas::GenerarMaso()
 
 		for (int a = 1; a < 5; a++) {
 			simbolo = Carta::siguienteSimbolo(a);
-			valorSimbolo = "K: " + simbolo;
+			valorSimbolo = "K-" + simbolo;
 			cartaTemp = new Carta(a, valorMaso, simbolo, valorSimbolo);
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
@@ -163,6 +163,14 @@ bool JuegoCartas::GenerarMaso()
 	return checker;
 }
 
+
+
+
+
+
+
+
+
 void JuegoCartas::sumarContador()
 {
 	contador++;
@@ -171,6 +179,11 @@ void JuegoCartas::sumarContador()
 void JuegoCartas::restarContador()
 {
 	contador--;
+}
+
+Carta JuegoCartas::buscarCarta()
+{
+	return Carta();
 }
 
 

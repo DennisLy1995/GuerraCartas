@@ -57,3 +57,19 @@ void ListaCartas::mostrarListaCartas() {
 		aux = aux->getSig();
 	}
 }
+
+Carta ListaCartas::sacarCarta(int valor)
+{
+
+	Carta retorno;
+	Nodo* aux = getCabeza();
+	while (aux != NULL) {
+
+		if (aux->getCarta().getValor == valor)
+		{
+			retorno = aux->getCarta();
+		}
+
+	}
+	return aux->getCarta();
+}
