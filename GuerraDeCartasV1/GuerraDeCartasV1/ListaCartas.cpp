@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "ListaCartas.h"
+#include <iostream>
+using namespace std;
 
 ListaCartas::ListaCartas()
 {
@@ -58,60 +60,38 @@ void ListaCartas::mostrarListaCartas() {
 	}
 }
 
-Carta ListaCartas::sacarCarta(int valor)
+Nodo* ListaCartas::sacarCarta(int numCarta)
 {
-	int contador = 0;
-	Carta retorno;
-	bool breaker = false;
+	Nodo* infoCarta = NULL;
 
 	if (getCabeza() != NULL) {
 		Nodo* aux;
 		aux = getCabeza();
 
-		if (getCabeza()->getCarta().getValor() == valor) {
-			retorno = getCabeza()->getCarta();
+		if (getCabeza()->getCarta().getNumCarta() == numCarta) {
+			infoCarta = getCabeza();
 			setCabeza(getCabeza()->getSig());
 			delete aux;
-			longitud--;
 		}
 		else {
-			Nodo* ant = getCabeza(); 
-			Nodo* act = getCabeza()->getSig();
-			if (act == NULL) {
-				if (cabeza->getCarta().getValor() == valor) {
-					retorno = cabeza->getCarta();
-				}
-			}
-			else {
-				while (breaker == false) {
-					if (act->getCarta().getValor() == valor) {
-						retorno = act->getCarta();
-						breaker = true;
-					}
-					else {
-						contador++;
-						if (contador == (getLong() - 1)) {
-							breaker = true;
-						}
-						else {
-							ant = ant->getSig();
-							act = act->getSig();
-						}
-					}
-				}
-				ant->setSig(act->getSig());
-				delete act;
-				longitud--;
+			Nodo* ant = getCabeza(), * act = getCabeza()->getSig();
 
+			while (act != NULL && act->getCarta().getNumCarta() != numCarta) {
+				ant = ant->getSig();
+				act = act->getSig();
 			}
-			
-			
+
+			ant->setSig(act->getSig());
+			infoCarta = act;
+			delete act;
 		}
-		
+		longitud--;
 	}
-	else {	
+	else {
+		cout << "--No hay cartas en la lista" << endl;
 	}
-	return retorno;
+
+	return infoCarta;
 }
 
 Carta ListaCartas::buscarCarta(int valor) {

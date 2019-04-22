@@ -39,6 +39,12 @@
     <ClInclude Include="JuegoCartas.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="NodoJugador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="ListaJugador.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="pch.cpp">
@@ -66,6 +72,12 @@
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="JuegoCartas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="NodoJugador.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="ListaJugador.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>

@@ -156,7 +156,9 @@
     <ClInclude Include="JuegoCartas.h" />
     <ClInclude Include="Jugador.h" />
     <ClInclude Include="ListaCartas.h" />
+    <ClInclude Include="ListaJugador.h" />
     <ClInclude Include="Nodo.h" />
+    <ClInclude Include="NodoJugador.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="PilaCartas.h" />
   </ItemGroup>
@@ -167,7 +169,9 @@
     <ClCompile Include="JuegoCartas.cpp" />
     <ClCompile Include="Jugador.cpp" />
     <ClCompile Include="ListaCartas.cpp" />
+    <ClCompile Include="ListaJugador.cpp" />
     <ClCompile Include="Nodo.cpp" />
+    <ClCompile Include="NodoJugador.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
