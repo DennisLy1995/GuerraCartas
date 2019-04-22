@@ -24,5 +24,6 @@ public:
 	void setCartasGanadas(Carta);//Se añaden cartas a la lista una por una
 	ListaCartas* getCartasGanadas(void);//Se obtiene la lista de cartas ganadas
 	int obtenerPuntaje();//Se obtine el puntaje que lleva el jugador
+	void mostrarJugador();
 };
 #endif // !JUGADOR_H

@@ -1,5 +1,7 @@
 #include "pch.h"
 #include "Jugador.h"
+#include <iostream>
+using namespace std;
 
 Jugador::Jugador()
 {
@@ -46,4 +48,12 @@ ListaCartas* Jugador::getCartasGanadas() {
 
 int Jugador::obtenerPuntaje() {
 	return cartasGanadas->getLong();
+}
+
+void Jugador::mostrarJugador()
+{
+	cout << "Numero jugador: " << getNumJugador() << endl;
+	cout << "Nombre: " << getNombre() << endl;
+	cout << "Puntaje: " << obtenerPuntaje() << endl;
+	cout << "-----------------" << endl;
 }
