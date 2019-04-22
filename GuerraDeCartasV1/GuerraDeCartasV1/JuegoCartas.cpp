@@ -199,11 +199,38 @@ void JuegoCartas::JugarGuerraCartas()
 		
 	}
 
-	//Generar numeros random.
+	switch (cantJugadores) {
 
-	temp = masoOriginal->sacarCarta(45);
-	cout << "El numero random es: " << 1+ rand()%51 << endl;
+	case 2:
+		jugarDosJugadores();
+		break;
 
+	case 3:
+		jugarTresJugadores();
+		break;
+
+	case 4:
+		jugarCuatroJugadores();
+		break;
+
+	default:
+		break;
+
+	}
+
+}
+
+void JuegoCartas::jugarDosJugadores()
+{
+
+}
+
+void JuegoCartas::jugarTresJugadores()
+{
+}
+
+void JuegoCartas::jugarCuatroJugadores()
+{
 }
 
 

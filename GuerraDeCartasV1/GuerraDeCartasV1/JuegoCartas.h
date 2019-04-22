@@ -19,7 +19,9 @@ public:
 	void restarContador();
 	Carta buscarCarta(int carta);
 	void JugarGuerraCartas();
-	
+	void jugarDosJugadores();
+	void jugarTresJugadores();
+	void jugarCuatroJugadores();
 
 private:
 	ListaCartas* masoOriginal = new ListaCartas();
