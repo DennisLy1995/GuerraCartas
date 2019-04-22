@@ -60,6 +60,7 @@ void ListaCartas::mostrarListaCartas() {
 
 Carta ListaCartas::sacarCarta(int valor)
 {
+	int contador = 0;
 	Carta retorno;
 	bool breaker = false;
 
@@ -71,24 +72,42 @@ Carta ListaCartas::sacarCarta(int valor)
 			retorno = getCabeza()->getCarta();
 			setCabeza(getCabeza()->getSig());
 			delete aux;
+			longitud--;
 		}
 		else {
-			Nodo* ant = getCabeza(), * act = getCabeza()->getSig();
-			while (act != NULL && breaker == false) {
-				if (act->getCarta().getValor() == valor) {
-					retorno = act->getCarta();
-					breaker = true;
+			Nodo* ant = getCabeza(); 
+			Nodo* act = getCabeza()->getSig();
+			if (act == NULL) {
+				if (cabeza->getCarta().getValor() == valor) {
+					retorno = cabeza->getCarta();
 				}
-				else {
-					ant = ant->getSig();
-					act = act->getSig();
-				}
-				
 			}
-			ant->setSig(act->getSig());
-			delete act;
+			else {
+				while (breaker == false) {
+					if (act->getCarta().getValor() == valor) {
+						retorno = act->getCarta();
+						breaker = true;
+					}
+					else {
+						contador++;
+						if (contador == (getLong() - 1)) {
+							breaker = true;
+						}
+						else {
+							ant = ant->getSig();
+							act = act->getSig();
+						}
+					}
+				}
+				ant->setSig(act->getSig());
+				delete act;
+				longitud--;
+
+			}
+			
+			
 		}
-		longitud--;
+		
 	}
 	else {	
 	}

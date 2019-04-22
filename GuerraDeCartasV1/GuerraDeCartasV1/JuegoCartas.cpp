@@ -1,7 +1,9 @@
 #include "pch.h"
 #include "JuegoCartas.h"
+#include "PilaCartas.h"
 #include <iostream>
 #include <cstdlib>
+#include <time.h>
 
 
 
@@ -222,6 +224,66 @@ void JuegoCartas::JugarGuerraCartas()
 
 void JuegoCartas::jugarDosJugadores()
 {
+	bool breaker = false;
+	bool breakerMaso1 = false;
+	bool breakerMaso2 = false;
+	int numeroRandom = 0;
+	Carta temp;
+	PilaCartas *masoJugador1 = new PilaCartas();
+	PilaCartas *masoJugador2 = new PilaCartas();
+
+	srand(time(NULL));
+
+	while (breaker == false) {
+		breakerMaso1 = false;
+		breakerMaso2 = false;
+		if (masoOriginal->getLong() == 0) {
+			breaker = true;
+		}
+		else {
+			while (breakerMaso1 == false) {
+
+				breakerMaso1 = false;
+				numeroRandom = 1 + (rand() % 51);
+				if (numeroRandom < 52) {
+					temp = masoOriginal->sacarCarta(numeroRandom);
+					if (temp.getSimbolo() == "Corazon" || temp.getSimbolo() == "Diamante" || temp.getSimbolo() == "Pica" || temp.getSimbolo() == "Trebol") {
+						masoJugador1->pushCarta(temp);
+						breakerMaso1 = true;
+						cout << numeroRandom;
+					}
+				}
+				
+			}
+			
+		}
+
+		if (masoOriginal->getLong() == 0) {
+			breaker = true;
+		}
+		else {
+			while (breakerMaso2 == false) {
+
+				breakerMaso2 = false;
+				numeroRandom = 1 + (rand() % 51);
+				if (numeroRandom < 52) {
+				temp = masoOriginal->sacarCarta(numeroRandom);
+				if (temp.getSimbolo() == "Corazon" || temp.getSimbolo() == "Diamante" || temp.getSimbolo() == "Pica" || temp.getSimbolo() == "Trebol") {
+					masoJugador2->pushCarta(temp);
+					breakerMaso2 = true;
+					cout << numeroRandom;
+				}
+				}
+				
+			}
+			
+		}
+
+
+	}
+
+	cout << "maso del jugador 1: " <<  masoJugador1->getLong() << endl << endl;
+	cout << "maso del jugador 2: " << masoJugador2->getLong()<< endl << endl;
 
 }
 
