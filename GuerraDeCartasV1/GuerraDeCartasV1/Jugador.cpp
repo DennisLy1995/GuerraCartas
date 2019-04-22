@@ -5,8 +5,19 @@ Jugador::Jugador()
 {
 }
 
-Jugador::Jugador(string nombre) {
+Jugador::Jugador(int numJugador, string nombre) {
+	this->numJugador = numJugador;
 	this->nombre = nombre;
+}
+
+void Jugador::setNumJugador(int numJugador)
+{
+	this->numJugador = numJugador;
+}
+
+int Jugador::getNumJugador()
+{
+	return numJugador;
 }
 
 void Jugador::setNombre(string nombre) {

@@ -18,10 +18,10 @@ public:
 	void sumarContador();
 	void restarContador();
 	Carta buscarCarta(int carta);
-	void JugarGuerraCartas();
+	/*void JugarGuerraCartas();
 	void jugarDosJugadores();
 	void jugarTresJugadores();
-	void jugarCuatroJugadores();
+	void jugarCuatroJugadores();*/
 
 private:
 	ListaCartas* masoOriginal = new ListaCartas();
