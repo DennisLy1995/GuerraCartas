@@ -247,10 +247,9 @@ void JuegoCartas::jugarDosJugadores()
 				numeroRandom = 1 + (rand() % 51);
 				if (numeroRandom < 52) {
 					temp = masoOriginal->sacarCarta(numeroRandom);
-					if (temp.getSimbolo() == "Corazon" || temp.getSimbolo() == "Diamante" || temp.getSimbolo() == "Pica" || temp.getSimbolo() == "Trebol") {
+					if (temp.getSimbolo() == "Corazon" || temp.getSimbolo() == "Diamante" || temp.getSimbolo() == "Trebol" || temp.getSimbolo() == "Pica") {
 						masoJugador1->pushCarta(temp);
 						breakerMaso1 = true;
-						cout << numeroRandom;
 					}
 				}
 				
@@ -268,10 +267,9 @@ void JuegoCartas::jugarDosJugadores()
 				numeroRandom = 1 + (rand() % 51);
 				if (numeroRandom < 52) {
 				temp = masoOriginal->sacarCarta(numeroRandom);
-				if (temp.getSimbolo() == "Corazon" || temp.getSimbolo() == "Diamante" || temp.getSimbolo() == "Pica" || temp.getSimbolo() == "Trebol") {
+				if (temp.getSimbolo() == "Corazon" || temp.getSimbolo() == "Diamante" || temp.getSimbolo() == "Trebol" || temp.getSimbolo() == "Pica") {
 					masoJugador2->pushCarta(temp);
 					breakerMaso2 = true;
-					cout << numeroRandom;
 				}
 				}
 				
@@ -279,11 +277,12 @@ void JuegoCartas::jugarDosJugadores()
 			
 		}
 
+		cout << "maso del jugador 1: " << masoJugador1->getLong() << endl << endl;
+		cout << "maso del jugador 2: " << masoJugador2->getLong() << endl << endl;
 
 	}
 
-	cout << "maso del jugador 1: " <<  masoJugador1->getLong() << endl << endl;
-	cout << "maso del jugador 2: " << masoJugador2->getLong()<< endl << endl;
+	
 
 }
 

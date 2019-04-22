@@ -41,7 +41,6 @@ void PilaCartas::pushCarta(Carta x) {
 		setTope(nuevo);
 	}
 	longitud++;
-	cout << "\nSe ha añadido una carta a la pila\n" << endl;
 }
 
 void PilaCartas::popCarta() {
