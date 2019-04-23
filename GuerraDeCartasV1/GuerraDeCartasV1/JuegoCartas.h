@@ -3,6 +3,7 @@
 #include "ListaCartas.h"
 #include "PilaCartas.h"
 #include "Carta.h"
+#include "ListaJugador.h"
 
 using namespace std;
 
@@ -13,6 +14,8 @@ public:
 	~JuegoCartas();
 	ListaCartas* getMasoOriginal();
 	PilaCartas* getMasoBarajado();
+	void setJugador(Jugador);
+	ListaJugador* getJugadores();
 	int getContador();
 	void setContador(int value);
 	void reiniciarContador();
@@ -21,9 +24,11 @@ public:
 	void restarContador();
 	Carta buscarCarta(int carta);
 	void barajarMaso(void);
+	void ingresarJugadores(void);
 
 private:
 	ListaCartas* masoOriginal = new ListaCartas();
 	PilaCartas* masoBarajado = new PilaCartas();
+	ListaJugador* jugadores = new ListaJugador();
 	int contador;
 };

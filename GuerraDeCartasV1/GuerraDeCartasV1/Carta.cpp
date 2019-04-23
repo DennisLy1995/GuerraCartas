@@ -51,7 +51,6 @@ void Carta::mostrarCarta() {
 	cout << "Numero en Maso: " << getNumCarta() << endl;
 	cout << "Peso: " << getValor() << endl;
 	cout << "Carta: " << getValorSimb() << endl;
-	cout << "Simbolo: " << getSimbolo() << endl;
 	cout << "-----------------" << endl;
 }
 

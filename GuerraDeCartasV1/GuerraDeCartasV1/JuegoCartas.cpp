@@ -25,6 +25,16 @@ PilaCartas* JuegoCartas::getMasoBarajado()
 	return masoBarajado;
 }
 
+void JuegoCartas::setJugador(Jugador jugador)
+{
+	jugadores->annadirJugador(jugador);
+}
+
+ListaJugador* JuegoCartas::getJugadores()
+{
+	return jugadores;
+}
+
 int JuegoCartas::getContador()
 {
 	return contador;
@@ -206,5 +216,27 @@ void JuegoCartas::barajarMaso(void)
 			}
 		} while (x == true);
 	}
+
+	cout << "Se ha barajado el maso" << endl;
 	//cout << "\nCatidad de cartas en pila: " << masoBarajado->getLong() << endl;
 }
+
+void JuegoCartas::ingresarJugadores(void)
+{
+	int cantJugadores;
+	string nombre;
+
+	cout << "\nDigite la catidad de jugadores que desea ingresar" << endl;
+	cin >> cantJugadores;
+
+	for (int i = 0; i < cantJugadores; i++) {
+		cout << "\nDigite el nombre del jugador " << i + 1 << endl;
+		cin >> nombre;
+		Jugador jugador(i + 1, nombre);
+		jugadores->annadirJugador(jugador);
+	}
+
+	jugadores->mostrarListaJugadores();
+}
+
+
