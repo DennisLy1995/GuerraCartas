@@ -60,39 +60,39 @@ void ListaCartas::mostrarListaCartas() {
 	}
 }
 
-Nodo* ListaCartas::sacarCarta(int numCarta)
-{
-	Nodo* infoCarta = NULL;
-
-	if (getCabeza() != NULL) {
-		Nodo* aux;
-		aux = getCabeza();
-
-		if (getCabeza()->getCarta().getNumCarta() == numCarta) {
-			infoCarta = getCabeza();
-			setCabeza(getCabeza()->getSig());
-			delete aux;
-		}
-		else {
-			Nodo* ant = getCabeza(), * act = getCabeza()->getSig();
-
-			while (act != NULL && act->getCarta().getNumCarta() != numCarta) {
-				ant = ant->getSig();
-				act = act->getSig();
-			}
-
-			ant->setSig(act->getSig());
-			infoCarta = act;
-			delete act;
-		}
-		longitud--;
-	}
-	else {
-		cout << "--No hay cartas en la lista" << endl;
-	}
-
-	return infoCarta;
-}
+//Carta ListaCartas::sacarCarta(int numCarta)
+//{
+//	Carta carta(0, 0, "0", "0");
+//
+//	if (getCabeza() != NULL) {
+//		Nodo* aux;
+//		aux = getCabeza();
+//
+//		if (getCabeza()->getCarta().getNumCarta() == numCarta) {
+//			carta = getCabeza()->getCarta();
+//			setCabeza(getCabeza()->getSig());
+//			delete aux;
+//		}
+//		else {
+//			Nodo* ant = getCabeza(), * act = getCabeza()->getSig();
+//
+//			while (act != NULL && act->getCarta().getNumCarta() != numCarta) {
+//				ant = ant->getSig();
+//				act = act->getSig();
+//			}
+//
+//			ant->setSig(act->getSig());
+//			carta = act->getCarta();
+//			delete act;
+//		}
+//		longitud--;
+//	}
+//	else {
+//		cout << "--No hay cartas en la lista" << endl;
+//	}
+//
+//	return carta;
+//}
 
 Carta ListaCartas::buscarCarta(int valor) {
 
@@ -107,6 +107,22 @@ Carta ListaCartas::buscarCarta(int valor) {
 	}
 
 	return retorno;
+
+}
+
+Carta ListaCartas::buscarCartaPorNum(int valor) {
+
+	Carta carta(0, 0, "0", "0");
+	Nodo* aux = getCabeza();
+
+	while (aux != NULL) {
+		if (aux->getCarta().getNumCarta() == valor) {
+			carta = aux->getCarta();
+		}
+		aux = aux->getSig();
+	}
+
+	return carta;
 
 }
 

@@ -2,7 +2,7 @@
 #include "JuegoCartas.h"
 #include "PilaCartas.h"
 #include <iostream>
-#include <cstdlib>
+#include <stdlib.h>
 #include <time.h>
 
 
@@ -18,6 +18,11 @@ JuegoCartas::~JuegoCartas()
 ListaCartas *JuegoCartas::getMasoOriginal()
 {
 	return masoOriginal;
+}
+
+PilaCartas* JuegoCartas::getMasoBarajado()
+{
+	return masoBarajado;
 }
 
 int JuegoCartas::getContador()
@@ -183,115 +188,23 @@ Carta JuegoCartas::buscarCarta(int carta)
 	return Carta();
 }
 
-//void JuegoCartas::JugarGuerraCartas()
-//{
-//	bool breaker = false;
-//	int cantJugadores = 0;
-//	int numerosRandom = 0;
-//	Carta temp;
-//
-//	while (breaker == false) {
-//		if (cantJugadores < 2 || cantJugadores > 4) {
-//			cout << "Ingrese la cantidad de jugadores (minimo 2 - maximo 4)" << endl;
-//			cin >> cantJugadores;
-//		}
-//		else {
-//			breaker = true;
-//		}
-//		
-//	}
-//
-//	switch (cantJugadores) {
-//
-//	case 2:
-//		jugarDosJugadores();
-//		break;
-//
-//	case 3:
-//		jugarTresJugadores();
-//		break;
-//
-//	case 4:
-//		jugarCuatroJugadores();
-//		break;
-//
-//	default:
-//		break;
-//
-//	}
-//
-//}
-//
-//void JuegoCartas::jugarDosJugadores()
-//{
-//	bool breaker = false;
-//	bool breakerMaso1 = false;
-//	bool breakerMaso2 = false;
-//	int numeroRandom = 0;
-//	Carta temp;
-//	PilaCartas *masoJugador1 = new PilaCartas();
-//	PilaCartas *masoJugador2 = new PilaCartas();
-//
-//	srand(time(NULL));
-//
-//	while (breaker == false) {
-//		breakerMaso1 = false;
-//		breakerMaso2 = false;
-//		if (masoOriginal->getLong() == 0) {
-//			breaker = true;
-//		}
-//		else {
-//			while (breakerMaso1 == false) {
-//
-//				breakerMaso1 = false;
-//				numeroRandom = 1 + (rand() % 51);
-//				if (numeroRandom < 52) {
-//					temp = masoOriginal->sacarCarta(numeroRandom);
-//					if (temp.getSimbolo() == "Corazon" || temp.getSimbolo() == "Diamante" || temp.getSimbolo() == "Trebol" || temp.getSimbolo() == "Pica") {
-//						masoJugador1->pushCarta(temp);
-//						breakerMaso1 = true;
-//					}
-//				}
-//				
-//			}
-//			
-//		}
-//
-//		if (masoOriginal->getLong() == 0) {
-//			breaker = true;
-//		}
-//		else {
-//			while (breakerMaso2 == false) {
-//
-//				breakerMaso2 = false;
-//				numeroRandom = 1 + (rand() % 51);
-//				if (numeroRandom < 52) {
-//				temp = masoOriginal->sacarCarta(numeroRandom);
-//				if (temp.getSimbolo() == "Corazon" || temp.getSimbolo() == "Diamante" || temp.getSimbolo() == "Trebol" || temp.getSimbolo() == "Pica") {
-//					masoJugador2->pushCarta(temp);
-//					breakerMaso2 = true;
-//				}
-//				}
-//				
-//			}
-//			
-//		}
-//
-//		cout << "maso del jugador 1: " << masoJugador1->getLong() << endl << endl;
-//		cout << "maso del jugador 2: " << masoJugador2->getLong() << endl << endl;
-//
-//	}
-//
-//	
-//
-//}
-//
-//void JuegoCartas::jugarTresJugadores()
-//{
-//}
-//
-//void JuegoCartas::jugarCuatroJugadores()
-//{
-//}
+void JuegoCartas::barajarMaso(void)
+{
+	
+	Carta carta;
+	int num;
+	bool x = false;
+	srand(time(NULL));
 
-
+	for (int i = 1; i <= masoOriginal->getLong(); i++) {
+		do {
+			num = 1 + rand() % (52 + 1 - 1);
+			x = masoBarajado->buscarEnPila(num);
+			if (x != true) {
+				carta = masoOriginal->buscarCartaPorNum(num);
+				masoBarajado->pushCarta(carta);
+			}
+		} while (x == true);
+	}
+	//cout << "\nCatidad de cartas en pila: " << masoBarajado->getLong() << endl;
+}

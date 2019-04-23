@@ -1,6 +1,7 @@
 #pragma once
 
 #include "ListaCartas.h"
+#include "PilaCartas.h"
 #include "Carta.h"
 
 using namespace std;
@@ -11,6 +12,7 @@ public:
 	JuegoCartas();
 	~JuegoCartas();
 	ListaCartas* getMasoOriginal();
+	PilaCartas* getMasoBarajado();
 	int getContador();
 	void setContador(int value);
 	void reiniciarContador();
@@ -18,12 +20,10 @@ public:
 	void sumarContador();
 	void restarContador();
 	Carta buscarCarta(int carta);
-	/*void JugarGuerraCartas();
-	void jugarDosJugadores();
-	void jugarTresJugadores();
-	void jugarCuatroJugadores();*/
+	void barajarMaso(void);
 
 private:
 	ListaCartas* masoOriginal = new ListaCartas();
+	PilaCartas* masoBarajado = new PilaCartas();
 	int contador;
 };

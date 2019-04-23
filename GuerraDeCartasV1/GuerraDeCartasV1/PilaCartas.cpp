@@ -57,3 +57,19 @@ void PilaCartas::popCarta() {
 		cout << "\nNo hay cartas en la pila" << endl;
 	}
 }
+
+bool PilaCartas::buscarEnPila(int valor)
+{
+	
+	Nodo* aux = getTope();
+	bool x = false;
+
+	while (aux != NULL) {
+		if (aux->getCarta().getNumCarta() == valor) {
+			x = true;
+		}
+		aux = aux->getSig();
+	}
+
+	return x;
+}

@@ -36,6 +36,7 @@ int procesarOpcion(int posicion) {
 	{
 	case 1:
 		juego->GenerarMaso();
+		juego->barajarMaso();
 		//juego->JugarGuerraCartas();
 		retorno = 1;
 		break;
