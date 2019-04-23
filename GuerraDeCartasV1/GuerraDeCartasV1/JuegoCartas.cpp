@@ -246,4 +246,56 @@ void JuegoCartas::ingresarJugadores(void)
 	jugadores->mostrarListaJugadores();
 }
 
+void JuegoCartas::repartirCartas(void)
+{
+	int cont = 1, cantCartas;
+	
+
+	if (jugadores->getLong() == 3) {
+		cantCartas = masoBarajado->getLong() - 1;
+	}
+	else {
+		cantCartas = masoBarajado->getLong();
+	}
+
+	for (int i = 1; i <= cantCartas; i++) {
+		if (cont == 1) {
+			darCarta(cont);
+			cont++;
+		}
+		else if (cont == 2) {
+			darCarta(cont);
+			if (jugadores->getLong() == 2) {
+				cont = 1;
+			}
+			else {
+				cont++;
+			}
+		}
+		else if (cont == 3) {
+			darCarta(cont);
+			if (jugadores->getLong() == 3) {
+				cont = 1;
+			}
+			else {
+				cont++;
+			}
+		}
+		else if (cont == 4) {
+			darCarta(cont);
+			if (jugadores->getLong() == 4) {
+				cont = 1;
+			}
+		}
+	}
+}
+
+void JuegoCartas::darCarta(int cont)
+{
+	Jugador jugador = jugadores->buscarJugador(cont);
+	Carta carta = masoBarajado->popCarta();
+	jugador.setMazo(carta);
+	jugadores->modificarJugador(jugador);
+}
+
 

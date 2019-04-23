@@ -93,3 +93,31 @@ void ListaJugador::sacarJugador(int numJugador)
 		cout << "--No hay jugadores registrados" << endl;
 	}
 }
+
+Jugador ListaJugador::buscarJugador(int numJug)
+{
+	Jugador retorno;
+	NodoJugador* aux = getCabeza();
+
+	while (aux != NULL) {
+		if (aux->getJugador().getNumJugador() == numJug) {
+			retorno = aux->getJugador();
+		}
+		aux = aux->getSig();
+	}
+
+	return retorno;
+}
+
+void ListaJugador::modificarJugador(Jugador jugador)
+{
+	NodoJugador* aux = getCabeza();
+
+	while (aux != NULL) {
+
+		if (aux->getJugador().getNumJugador() == jugador.getNumJugador()) {
+			aux->setJugador(jugador);
+		}
+		aux = aux->getSig();
+	}
+}

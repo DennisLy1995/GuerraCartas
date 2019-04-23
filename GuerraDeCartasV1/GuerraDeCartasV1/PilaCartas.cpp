@@ -43,11 +43,13 @@ void PilaCartas::pushCarta(Carta x) {
 	longitud++;
 }
 
-void PilaCartas::popCarta() {
+Carta PilaCartas::popCarta() {
 	Nodo * aux;
+	Carta carta(0,0,"0","0");
 
 	if (getTope() != NULL) {
 		aux = getTope();
+		carta = aux->getCarta();
 		setTope(aux->getSig());
 		longitud--;
 		aux = NULL;
@@ -56,6 +58,8 @@ void PilaCartas::popCarta() {
 	else {
 		cout << "\nNo hay cartas en la pila" << endl;
 	}
+
+	return carta;
 }
 
 bool PilaCartas::buscarEnPila(int valor)

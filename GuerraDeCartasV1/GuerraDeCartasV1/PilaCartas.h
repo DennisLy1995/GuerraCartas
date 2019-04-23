@@ -14,7 +14,7 @@ public:
 	int getLong(void);
 	bool esVacia(void);
 	void pushCarta(Carta);
-	void popCarta(void);
+	Carta popCarta(void);
 	bool buscarEnPila(int);
 };
 #endif // !PILACARTAS_H

@@ -16,5 +16,7 @@ public:
 	void annadirJugador(Jugador);
 	void mostrarListaJugadores(void);
 	void sacarJugador(int);
+	Jugador buscarJugador(int);
+	void modificarJugador(Jugador);
 };
 #endif // !LISTACARTAS_H

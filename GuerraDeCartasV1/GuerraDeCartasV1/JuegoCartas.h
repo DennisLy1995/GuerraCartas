@@ -25,6 +25,8 @@ public:
 	Carta buscarCarta(int carta);
 	void barajarMaso(void);
 	void ingresarJugadores(void);
+	void repartirCartas(void);
+	void darCarta(int);
 
 private:
 	ListaCartas* masoOriginal = new ListaCartas();
