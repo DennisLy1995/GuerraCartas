@@ -226,15 +226,22 @@ void JuegoCartas::ingresarJugadores(void)
 	int cantJugadores;
 	string nombre;
 
-	cout << "\nDigite la catidad de jugadores que desea ingresar" << endl;
-	cin >> cantJugadores;
+	do {
+		cout << "\nDigite la catidad de jugadores que desea ingresar (Maximo 4, minimo 2)" << endl;
+		cin >> cantJugadores;
 
-	for (int i = 0; i < cantJugadores; i++) {
-		cout << "\nDigite el nombre del jugador " << i + 1 << endl;
-		cin >> nombre;
-		Jugador jugador(i + 1, nombre);
-		jugadores->annadirJugador(jugador);
-	}
+		if (cantJugadores >= 2 && cantJugadores <= 4) {
+			for (int i = 0; i < cantJugadores; i++) {
+				cout << "\nDigite el nombre del jugador " << i + 1 << endl;
+				cin >> nombre;
+				Jugador jugador(i + 1, nombre);
+				jugadores->annadirJugador(jugador);
+			}
+		}
+		else {
+			cout << "\nPor favor ingrese una cantidad de jugadores de 2 a 4" << endl;
+		}
+	} while (cantJugadores < 2 || cantJugadores > 4);
 
 	jugadores->mostrarListaJugadores();
 }
