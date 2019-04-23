@@ -48,7 +48,8 @@ string Carta::getValorSimb() {
 }
 
 void Carta::mostrarCarta() {
-	cout << "Valor: " << getValor() << endl;
+	cout << "Numero en Maso: " << getNumCarta() << endl;
+	cout << "Peso: " << getValor() << endl;
 	cout << "Carta: " << getValorSimb() << endl;
 	cout << "-----------------" << endl;
 }
