@@ -318,6 +318,7 @@ void JuegoCartas::iniciarJuego()
 	}
 }
 
+
 void JuegoCartas::imprimirMenuJuego()
 {
 	cout << endl << "================================================" << endl;
@@ -332,23 +333,49 @@ void JuegoCartas::imprimirMenuJuego()
 void JuegoCartas::tirarCartas()
 {
 	if (this->getJugadores()->getLong() == 2) {
-		cout << this->getJugadores()->buscarJugador(1).getNombre() << endl;
-		cout << this->getJugadores()->buscarJugador(2).getNombre() << endl;
+		evaluarTurnoDosJugadores();
 	}
 	else if (this->getJugadores()->getLong() == 3) {
-		cout << this->getJugadores()->buscarJugador(1).getNombre() << endl;
-		cout << this->getJugadores()->buscarJugador(2).getNombre() << endl;
-		cout << this->getJugadores()->buscarJugador(3).getNombre() << endl;
+		evaluarTurnoTresJugadores();
 	}
 	else if (this->getJugadores()->getLong() == 4) {
-		cout << this->getJugadores()->buscarJugador(1).getNombre() << endl;
-		cout << this->getJugadores()->buscarJugador(2).getNombre() << endl;
-		cout << this->getJugadores()->buscarJugador(3).getNombre() << endl;
-		cout << this->getJugadores()->buscarJugador(4).getNombre() << endl;
+		evaluarTurnoCuatroJugadores();
 	}
 	else {
 		cout << "No se pueden tirar Cartas entre mas de de 4 jugadores o menos de 2." << endl << endl;
 	}
 }
+
+void JuegoCartas::evaluarTurnoDosJugadores()
+{
+	if (this->getJugadores()->buscarJugador(1).getMazo()->getFinal()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(2).getMazo()->getFinal()->getCarta().getValor()) {
+
+		cout << "El jugador 1 ha ganado este turno." << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFinal()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
+	}
+	else if (this->getJugadores()->buscarJugador(1).getMazo()->getFinal()->getCarta().getValor() <
+		this->getJugadores()->buscarJugador(2).getMazo()->getFinal()->getCarta().getValor()) {
+
+		cout << "El jugador 2 ha ganado este turno." << endl;
+		this->getJugadores()->buscarJugador(2).getMazo()->getFinal()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(1).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(2);
+	}
+	else {
+		cout << "Ha habido un empate, las cartas se han desechado.";
+	}
+
+}
+
+void JuegoCartas::evaluarTurnoTresJugadores()
+{
+}
+
+void JuegoCartas::evaluarTurnoCuatroJugadores()
+{
+}
+
 
 

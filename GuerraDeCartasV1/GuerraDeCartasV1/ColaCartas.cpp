@@ -63,7 +63,7 @@ Nodo* ColaCartas::tomarCarta() {
 		nodoCarta = aux;
 		setFrente(aux->getSig());
 		aux->setSig(NULL);
-		delete aux;
+		//delete aux;
 		longitud--;
 	}
 

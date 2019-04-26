@@ -28,6 +28,9 @@ public:
 	void repartirCartas(void);
 	void darCarta(int);
 	void iniciarJuego();
+	void evaluarTurnoDosJugadores();
+	void evaluarTurnoTresJugadores();
+	void evaluarTurnoCuatroJugadores();
 	void imprimirMenuJuego();
 	void tirarCartas();
 

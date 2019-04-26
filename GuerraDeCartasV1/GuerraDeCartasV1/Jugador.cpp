@@ -46,6 +46,7 @@ ListaCartas* Jugador::getCartasGanadas() {
 	return cartasGanadas;
 }
 
+
 int Jugador::obtenerPuntaje() {
 	return cartasGanadas->getLong();
 }
