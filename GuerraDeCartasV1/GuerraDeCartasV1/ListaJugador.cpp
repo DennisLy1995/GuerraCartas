@@ -59,7 +59,7 @@ void ListaJugador::annadirJugador(Jugador jugador)
 void ListaJugador::mostrarListaJugadores(void)
 {
 	NodoJugador* aux = getCabeza();
-
+	
 	while (aux != NULL) {
 		aux->getJugador().mostrarJugador();
 		aux = aux->getSig();

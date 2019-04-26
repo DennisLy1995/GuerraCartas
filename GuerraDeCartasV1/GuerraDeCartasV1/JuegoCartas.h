@@ -31,6 +31,7 @@ public:
 	void jugarEntreDos();
 	void jugarEntreTres();
 	void jugarEntreCuatro();
+	void imprimirMenuJuego();
 
 private:
 	ListaCartas* masoOriginal = new ListaCartas();

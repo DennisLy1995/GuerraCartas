@@ -308,26 +308,48 @@ void JuegoCartas::iniciarJuego()
 		this->jugarEntreCuatro();
 		break;
 	default:
-		cout << "Solo pueden haber entre 2 y 4 jugadores." << endl;
+		cout << "El juego tiene un limite de 2, 3 o 4 jugadores." << endl;
 		break;
 	}
 }
 
 void JuegoCartas::jugarEntreDos()
 {
-	cout << "Partida entre 2 jugadores" << endl << endl;
-
+	cout << "Partida entre " << this->getJugadores()->getLong()<< " jugadores." << endl << endl;
+	int lectura = 0;
+	while (lectura != 3) {
+		imprimirMenuJuego();
+		cin >> lectura;
+		switch (lectura) {
+		case 1:
+			break;
+		case 2:
+			cout << endl;
+			jugadores->mostrarListaJugadores();
+			cout << endl;
+			break;
+		default:
+			cout << "Upsssss, opcion invalida." << endl;
+			break;
+		}
+	}
 }
 
 void JuegoCartas::jugarEntreTres()
 {
-	cout << "Partida entre 3 jugadores" << endl << endl;
-
 }
 
 void JuegoCartas::jugarEntreCuatro()
 {
-	cout << "Partida entre 4 jugadores" << endl << endl;
+}
+
+void JuegoCartas::imprimirMenuJuego()
+{
+
+	cout << endl << "1. Tirar cartas." << endl;
+	cout << "2. Mostrar puntajes." << endl;
+	cout << "3. Salir" << endl << endl;
+	cout << "INGRESE LA OPCION: " ;
 
 }
 
