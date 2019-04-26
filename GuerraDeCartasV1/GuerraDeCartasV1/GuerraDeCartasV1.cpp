@@ -39,7 +39,7 @@ int procesarOpcion(int posicion) {
 		juego->barajarMaso();
 		juego->ingresarJugadores();
 		juego->repartirCartas();
-		//juego->JugarGuerraCartas();
+		juego->iniciarJuego();
 		retorno = 1;
 		break;
 	case 2:

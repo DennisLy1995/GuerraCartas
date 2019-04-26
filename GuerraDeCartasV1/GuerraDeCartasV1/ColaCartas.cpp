@@ -50,7 +50,6 @@ void ColaCartas::insertarCarta(Carta x) {
 		setFinal(nuevo);
 	}
 	longitud++;
-	cout << "\nSe ha añadido la carta a la cola\n" << endl;
 }
 
 Nodo* ColaCartas::tomarCarta() {

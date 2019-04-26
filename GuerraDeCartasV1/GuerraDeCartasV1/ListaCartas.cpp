@@ -60,40 +60,6 @@ void ListaCartas::mostrarListaCartas() {
 	}
 }
 
-//Carta ListaCartas::sacarCarta(int numCarta)
-//{
-//	Carta carta(0, 0, "0", "0");
-//
-//	if (getCabeza() != NULL) {
-//		Nodo* aux;
-//		aux = getCabeza();
-//
-//		if (getCabeza()->getCarta().getNumCarta() == numCarta) {
-//			carta = getCabeza()->getCarta();
-//			setCabeza(getCabeza()->getSig());
-//			delete aux;
-//		}
-//		else {
-//			Nodo* ant = getCabeza(), * act = getCabeza()->getSig();
-//
-//			while (act != NULL && act->getCarta().getNumCarta() != numCarta) {
-//				ant = ant->getSig();
-//				act = act->getSig();
-//			}
-//
-//			ant->setSig(act->getSig());
-//			carta = act->getCarta();
-//			delete act;
-//		}
-//		longitud--;
-//	}
-//	else {
-//		cout << "--No hay cartas en la lista" << endl;
-//	}
-//
-//	return carta;
-//}
-
 Carta ListaCartas::buscarCarta(int valor) {
 
 	Carta retorno;

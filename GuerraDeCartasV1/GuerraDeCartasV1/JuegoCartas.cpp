@@ -165,9 +165,6 @@ bool JuegoCartas::GenerarMaso()
 			masoOriginal->insertarCarta(*cartaTemp);
 			valorMaso++;
 		}
-		
-
-		masoOriginal->mostrarListaCartas();
 
 	}
 	catch (exception e) {
@@ -296,6 +293,42 @@ void JuegoCartas::darCarta(int cont)
 	Carta carta = masoBarajado->popCarta();
 	jugador.setMazo(carta);
 	jugadores->modificarJugador(jugador);
+}
+
+void JuegoCartas::iniciarJuego()
+{
+	switch (this->getJugadores()->getLong()) {
+	case 2:
+		this->jugarEntreDos();
+		break;
+	case 3:
+		this->jugarEntreTres();
+		break;
+	case 4:
+		this->jugarEntreCuatro();
+		break;
+	default:
+		cout << "Solo pueden haber entre 2 y 4 jugadores." << endl;
+		break;
+	}
+}
+
+void JuegoCartas::jugarEntreDos()
+{
+	cout << "Partida entre 2 jugadores" << endl << endl;
+
+}
+
+void JuegoCartas::jugarEntreTres()
+{
+	cout << "Partida entre 3 jugadores" << endl << endl;
+
+}
+
+void JuegoCartas::jugarEntreCuatro()
+{
+	cout << "Partida entre 4 jugadores" << endl << endl;
+
 }
 
 
