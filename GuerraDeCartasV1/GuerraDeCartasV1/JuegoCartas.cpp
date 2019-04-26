@@ -348,33 +348,190 @@ void JuegoCartas::tirarCartas()
 
 void JuegoCartas::evaluarTurnoDosJugadores()
 {
-	if (this->getJugadores()->buscarJugador(1).getMazo()->getFinal()->getCarta().getValor() >
-		this->getJugadores()->buscarJugador(2).getMazo()->getFinal()->getCarta().getValor()) {
+	if (this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor()) {
 
-		cout << "El jugador 1 ha ganado este turno." << endl;
-		this->getJugadores()->buscarJugador(1).getMazo()->getFinal()->getCarta().mostrarCarta();
+		cout << this->getJugadores()->buscarJugador(1).getNombre() << " ha ganado este turno." << endl << endl << "Carta Ganadora" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		cout << endl << endl << "Carta Perdedora" << endl << endl;
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().mostrarCarta();
+		//Se envian las cartas a la pila de cartas ganadas del ganador.
+		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
 		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
 	}
-	else if (this->getJugadores()->buscarJugador(1).getMazo()->getFinal()->getCarta().getValor() <
-		this->getJugadores()->buscarJugador(2).getMazo()->getFinal()->getCarta().getValor()) {
+	else if (this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor() <
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor()) {
 
-		cout << "El jugador 2 ha ganado este turno." << endl;
-		this->getJugadores()->buscarJugador(2).getMazo()->getFinal()->getCarta().mostrarCarta();
+		cout << this->getJugadores()->buscarJugador(2).getNombre() << " ha ganado este turno." << endl << endl << "Carta Ganadora" << endl << endl;
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().mostrarCarta();
+		cout << endl << endl << "Carta Perdedora" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		//Se envian las cartas a la pila de cartas ganadas del ganador.
 		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(1).getMazo()->tomarCarta()->getCarta());
-		this->getJugadores()->buscarJugador(2);
+		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
 	}
 	else {
-		cout << "Ha habido un empate, las cartas se han desechado.";
+		cout << "Ha habido un empate, trabajando en ello." << endl;
 	}
 
 }
 
 void JuegoCartas::evaluarTurnoTresJugadores()
 {
+
+	if (this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor()) {
+
+		cout << this->getJugadores()->buscarJugador(1).getNombre() << " ha ganado este turno." << endl << endl << "Carta Ganadora" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		cout << endl << endl << "Cartas Perdedoras" << endl << endl;
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().mostrarCarta();
+		//Se envian las cartas a la pila de cartas ganadas del ganador.
+		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(1).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(3).getMazo()->tomarCarta()->getCarta());
+
+	}
+	else if (this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor()) {
+
+		cout << this->getJugadores()->buscarJugador(2).getNombre() << " ha ganado este turno." << endl << endl << "Carta Ganadora" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		cout << endl << endl << "Cartas Perdedoras" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().mostrarCarta();
+		//Se envian las cartas a la pila de cartas ganadas del ganador.
+		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(1).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(3).getMazo()->tomarCarta()->getCarta());
+
+	}
+	else if (this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor()) {
+
+		cout << this->getJugadores()->buscarJugador(3).getNombre() << " ha ganado este turno." << endl << endl << "Carta Ganadora" << endl << endl;
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().mostrarCarta();
+		cout << endl << endl << "Cartas Perdedoras" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().mostrarCarta();
+		//Se envian las cartas a la pila de cartas ganadas del ganador.
+		this->getJugadores()->buscarJugador(3).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(1).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(3).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(3).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(3).getMazo()->tomarCarta()->getCarta());
+
+
+	}
+	else {
+		cout << "Ha habido un empate, trabajando en ello." << endl;
+	}
+
 }
 
 void JuegoCartas::evaluarTurnoCuatroJugadores()
 {
+
+	if (this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(4).getMazo()->getFrente()->getCarta().getValor()) {
+
+		cout << this->getJugadores()->buscarJugador(1).getNombre() << " ha ganado este turno." << endl << endl << "Carta Ganadora" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		cout << endl << endl << "Cartas Perdedoras" << endl << endl;
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(4).getMazo()->getFrente()->getCarta().mostrarCarta();
+		//Se envian las cartas a la pila de cartas ganadas del ganador.
+		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(1).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(3).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(1).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(4).getMazo()->tomarCarta()->getCarta());
+
+	}
+	else if (this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(4).getMazo()->getFrente()->getCarta().getValor()) {
+
+		cout << this->getJugadores()->buscarJugador(2).getNombre() << " ha ganado este turno." << endl << endl << "Carta Ganadora" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		cout << endl << endl << "Cartas Perdedoras" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(4).getMazo()->getFrente()->getCarta().mostrarCarta();
+		//Se envian las cartas a la pila de cartas ganadas del ganador.
+		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(1).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(3).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(4).getMazo()->tomarCarta()->getCarta());
+
+	}
+	else if (this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(4).getMazo()->getFrente()->getCarta().getValor()) {
+
+		cout << this->getJugadores()->buscarJugador(3).getNombre() << " ha ganado este turno." << endl << endl << "Carta Ganadora" << endl << endl;
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().mostrarCarta();
+		cout << endl << endl << "Cartas Perdedoras" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(4).getMazo()->getFrente()->getCarta().mostrarCarta();
+		//Se envian las cartas a la pila de cartas ganadas del ganador.
+		this->getJugadores()->buscarJugador(3).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(1).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(3).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(3).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(3).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(3).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(4).getMazo()->tomarCarta()->getCarta());
+
+	}
+	else if (this->getJugadores()->buscarJugador(4).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(4).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor()
+		&&
+		this->getJugadores()->buscarJugador(4).getMazo()->getFrente()->getCarta().getValor() >
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().getValor()) {
+
+		cout << this->getJugadores()->buscarJugador(4).getNombre() << " ha ganado este turno." << endl << endl << "Carta Ganadora" << endl << endl;
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().mostrarCarta();
+		cout << endl << endl << "Cartas Perdedoras" << endl << endl;
+		this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().mostrarCarta();
+		this->getJugadores()->buscarJugador(3).getMazo()->getFrente()->getCarta().mostrarCarta();
+		//Se envian las cartas a la pila de cartas ganadas del ganador.
+		this->getJugadores()->buscarJugador(4).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(1).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(4).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(4).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(3).getMazo()->tomarCarta()->getCarta());
+		this->getJugadores()->buscarJugador(4).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(4).getMazo()->tomarCarta()->getCarta());
+
+	}
+	else {
+		cout << "Ha habido un empate, trabajando en ello." << endl;
+	}
+
 }
 
 
