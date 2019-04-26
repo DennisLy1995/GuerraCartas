@@ -240,7 +240,6 @@ void JuegoCartas::ingresarJugadores(void)
 		}
 	} while (cantJugadores < 2 || cantJugadores > 4);
 
-	jugadores->mostrarListaJugadores();
 }
 
 void JuegoCartas::repartirCartas(void)
@@ -297,34 +296,18 @@ void JuegoCartas::darCarta(int cont)
 
 void JuegoCartas::iniciarJuego()
 {
-	switch (this->getJugadores()->getLong()) {
-	case 2:
-		this->jugarEntreDos();
-		break;
-	case 3:
-		this->jugarEntreTres();
-		break;
-	case 4:
-		this->jugarEntreCuatro();
-		break;
-	default:
-		cout << "El juego tiene un limite de 2, 3 o 4 jugadores." << endl;
-		break;
-	}
-}
-
-void JuegoCartas::jugarEntreDos()
-{
-	cout << "Partida entre " << this->getJugadores()->getLong()<< " jugadores." << endl << endl;
+	cout << endl << endl << "Partida entre " << this->getJugadores()->getLong() << " jugadores." << endl << endl;
 	int lectura = 0;
 	while (lectura != 3) {
 		imprimirMenuJuego();
 		cin >> lectura;
 		switch (lectura) {
 		case 1:
+			this->tirarCartas();
 			break;
 		case 2:
-			cout << endl;
+			cout << endl << endl;
+			cout << "Puntajes actuales de los jugadores." << endl << endl;
 			jugadores->mostrarListaJugadores();
 			cout << endl;
 			break;
@@ -335,22 +318,37 @@ void JuegoCartas::jugarEntreDos()
 	}
 }
 
-void JuegoCartas::jugarEntreTres()
-{
-}
-
-void JuegoCartas::jugarEntreCuatro()
-{
-}
-
 void JuegoCartas::imprimirMenuJuego()
 {
-
-	cout << endl << "1. Tirar cartas." << endl;
+	cout << endl << "================================================" << endl;
+	cout << "1. Tirar cartas." << endl;
 	cout << "2. Mostrar puntajes." << endl;
 	cout << "3. Salir" << endl << endl;
-	cout << "INGRESE LA OPCION: " ;
+	cout << "================================================" << endl;
+	cout << "INGRESE LA OPCION: ";
 
+}
+
+void JuegoCartas::tirarCartas()
+{
+	if (this->getJugadores()->getLong() == 2) {
+		cout << this->getJugadores()->buscarJugador(1).getNombre() << endl;
+		cout << this->getJugadores()->buscarJugador(2).getNombre() << endl;
+	}
+	else if (this->getJugadores()->getLong() == 3) {
+		cout << this->getJugadores()->buscarJugador(1).getNombre() << endl;
+		cout << this->getJugadores()->buscarJugador(2).getNombre() << endl;
+		cout << this->getJugadores()->buscarJugador(3).getNombre() << endl;
+	}
+	else if (this->getJugadores()->getLong() == 4) {
+		cout << this->getJugadores()->buscarJugador(1).getNombre() << endl;
+		cout << this->getJugadores()->buscarJugador(2).getNombre() << endl;
+		cout << this->getJugadores()->buscarJugador(3).getNombre() << endl;
+		cout << this->getJugadores()->buscarJugador(4).getNombre() << endl;
+	}
+	else {
+		cout << "No se pueden tirar Cartas entre mas de de 4 jugadores o menos de 2." << endl << endl;
+	}
 }
 
 

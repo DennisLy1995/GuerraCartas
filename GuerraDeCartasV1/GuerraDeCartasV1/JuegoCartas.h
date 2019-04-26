@@ -28,10 +28,8 @@ public:
 	void repartirCartas(void);
 	void darCarta(int);
 	void iniciarJuego();
-	void jugarEntreDos();
-	void jugarEntreTres();
-	void jugarEntreCuatro();
 	void imprimirMenuJuego();
+	void tirarCartas();
 
 private:
 	ListaCartas* masoOriginal = new ListaCartas();
