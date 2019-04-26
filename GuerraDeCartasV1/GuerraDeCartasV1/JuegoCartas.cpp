@@ -371,7 +371,7 @@ void JuegoCartas::evaluarTurnoDosJugadores()
 		this->getJugadores()->buscarJugador(2).getCartasGanadas()->insertarCarta(this->getJugadores()->buscarJugador(2).getMazo()->tomarCarta()->getCarta());
 	}
 	else {
-		cout << "Ha habido un empate, trabajando en ello." << endl;
+		cout << "Ha habido un empate, las cartas han side ingresadas en el maso de cada jugador en una posicion aleatoria." << endl;
 	}
 
 }
@@ -432,7 +432,7 @@ void JuegoCartas::evaluarTurnoTresJugadores()
 
 	}
 	else {
-		cout << "Ha habido un empate, trabajando en ello." << endl;
+		cout << "Ha habido un empate, las cartas han side ingresadas en el maso de cada jugador en una posicion aleatoria." << endl;
 	}
 
 }
@@ -529,7 +529,7 @@ void JuegoCartas::evaluarTurnoCuatroJugadores()
 
 	}
 	else {
-		cout << "Ha habido un empate, trabajando en ello." << endl;
+		cout << "Ha habido un empate, las cartas han side ingresadas en el maso de cada jugador en una posicion aleatoria." << endl;
 	}
 
 }
