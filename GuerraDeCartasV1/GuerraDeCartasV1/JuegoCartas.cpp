@@ -401,7 +401,7 @@ void JuegoCartas::evaluarTurnoDosJugadores()
 		}
 	}
 	else {
-		cout << "_____Game_Over_____" << endl << endl;
+		cout << "   _____Game_Over_____" << endl << endl;
 		jugadores->mostrarListaJugadores();
 	}
 	cantCartasJugadas = this->getJugadores()->buscarJugador(1).getCartasGanadas()->getLong() +
@@ -508,7 +508,7 @@ void JuegoCartas::evaluarTurnoTresJugadores()
 		}
 	}
 	else {
-		cout << "_____Game_Over_____" << endl << endl;
+		cout << "  _____Game_Over_____" << endl << endl;
 		jugadores->mostrarListaJugadores();
 	}
 	cantCartasJugadas = this->getJugadores()->buscarJugador(1).getCartasGanadas()->getLong() +
@@ -672,7 +672,7 @@ void JuegoCartas::evaluarTurnoCuatroJugadores()
 		}
 	}
 	else {
-		cout << "_____Game_Over_____" << endl << endl;
+		cout << "   _____Game_Over_____" << endl << endl;
 		jugadores->mostrarListaJugadores();
 	}
 	cantCartasJugadas = this->getJugadores()->buscarJugador(1).getCartasGanadas()->getLong() +

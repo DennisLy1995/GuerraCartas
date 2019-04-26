@@ -43,7 +43,7 @@ int procesarOpcion(int posicion) {
 		retorno = 1;
 		break;
 	case 2:
-		cout << "Reglas del juego:" << endl; // Esto se debería de cambiar
+		cout << "===========================================================================================================\n\n                             Reglas del juego Guerra de cartas\n\n   1.Juego entre 2 y 4 jugadores.\n\n   2.El naipe de 52 cartas se repartira entre los jugadores.\n\n   3.Por turno cada jugador mostrara la ultima carta en su pila de cartas.\n\n   4.El jugador con la carta cuyo valor sea el mas alto, ganara todas las cartas\n\t4.1.Las cartas ganadas en el turno no entran mas en juego, se colocan por aparte.\n\n   5.El jugador con mas cartas al final, es el ganador.\n\n\n   Nota: En caso de un empate, los jugadores tendran que seleccionar enter para generar un numero aleatorio,\n      el jugador con el numero mas grande gana las cartas del turno.\n\n===========================================================================================================\n\n" << endl;
 		retorno = 1;
 		break;
 	case 3:

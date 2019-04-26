@@ -53,8 +53,9 @@ int Jugador::obtenerPuntaje() {
 
 void Jugador::mostrarJugador()
 {
-	cout << "Numero jugador: " << getNumJugador() << endl;
-	cout << "Nombre: " << getNombre() << endl;
-	cout << "Puntaje: " << obtenerPuntaje() << endl;
-	cout << "-----------------" << endl;
+	cout << endl << "---------------------------" << endl;
+	cout << "      + Jugador " << getNumJugador() << endl;
+	cout << "      + Nombre: " << getNombre() << endl;
+	cout << "      + Puntaje: " << obtenerPuntaje() << endl;
+	cout << "---------------------------" << endl;
 }
