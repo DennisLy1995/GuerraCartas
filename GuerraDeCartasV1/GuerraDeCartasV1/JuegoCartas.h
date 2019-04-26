@@ -33,6 +33,7 @@ public:
 	void evaluarTurnoCuatroJugadores();
 	void imprimirMenuJuego();
 	void tirarCartas();
+	int generarNumeroRandom();
 
 private:
 	ListaCartas* masoOriginal = new ListaCartas();
