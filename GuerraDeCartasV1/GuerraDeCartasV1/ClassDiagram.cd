@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1" MembersFormat="FullSignature">
+  <Class Name="Carta">
+    <Position X="0.75" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AABAABABAAIAAAAEQAgAAAAQABFABAQAAAAAEAAAAAQ=</HashCode>
+      <FileName>Carta.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ColaCartas">
+    <Position X="14.5" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAASAAAQBAEAAAAFACQAQAAAAAAAIAAAAAAAAAAAAA=</HashCode>
+      <FileName>ColaCartas.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="JuegoCartas">
+    <Position X="6.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AIESAAAAAAAAIAAECIAwIAAACAAIAEDAEIQEgEAQABA=</HashCode>
+      <FileName>JuegoCartas.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Jugador">
+    <Position X="3.75" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAIAAKAoAAgCAAAIAgAAIAAAAACCAgAAAAAEAAAg=</HashCode>
+      <FileName>Jugador.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ListaCartas">
+    <Position X="11.5" Y="0.5" Width="2.75" />
+    <TypeIdentifier>
+      <HashCode>AAEASAAAAACAAAACAABQAAABAgAAAAAAAAiAAAAAAAA=</HashCode>
+      <FileName>ListaCartas.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ListaJugador">
+    <Position X="21.5" Y="0.5" Width="2.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAUAAAACCAAAACAAAQACABAAAAAAAAACiAAAABAAA=</HashCode>
+      <FileName>ListaJugador.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Nodo">
+    <Position X="9.5" Y="0.5" Width="1.75" />
+    <TypeIdentifier>
+      <HashCode>BAAAAAAAAAAAAAQAAAAAAABIAAAAAAAAAAhAgAAAAAA=</HashCode>
+      <FileName>Nodo.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="NodoJugador">
+    <Position X="19" Y="0.5" Width="2.25" />
+    <TypeIdentifier>
+      <HashCode>BQAAAAAAAAAAAAQAAAgBAABAAAAAAAAAAAAAAAAAABA=</HashCode>
+      <FileName>NodoJugador.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="PilaCartas">
+    <Position X="16.75" Y="0.5" Width="2" />
+    <TypeIdentifier>
+      <HashCode>AAAAQJAAAABAAAAAABAUQAAAAAAAAIAAAAAAAABAAAA=</HashCode>
+      <FileName>PilaCartas.h</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
