@@ -4,7 +4,6 @@
 #include "JuegoCartas.h"
 using namespace std;
 
-void pruebaJugador(void); //solamente para prueba
 int procesarOpcion(int opcion);
 void mostrarMenu();
 
@@ -54,22 +53,4 @@ int procesarOpcion(int posicion) {
 		retorno = 1;
 	}
 	return retorno;
-}
-
-
-void pruebaJugador() { //Metodo solamente creado para probar que la sintaxis o funcionalidad funcionan
-	Jugador jugador;
-	Carta carta;
-	ListaCartas* listaTemp = new ListaCartas();
-
-	Carta temp (1,1,"jajaja","jajajaja");
-	listaTemp->insertarCarta(temp);
-	listaTemp->mostrarListaCartas();
-
-	//Nodo* nodocarta;
-
-	/*nodocarta = jugador.getMazo()->tomarCarta();
-	nodocarta->getCarta();*/
-	
-	//carta = jugador.getMazo()->tomarCarta()->getCarta();
 }
