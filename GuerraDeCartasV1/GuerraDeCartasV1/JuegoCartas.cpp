@@ -417,7 +417,7 @@ void JuegoCartas::evaluarTurnoTresJugadores()
 		this->getJugadores()->buscarJugador(2).getCartasGanadas()->getLong() +
 		this->getJugadores()->buscarJugador(3).getCartasGanadas()->getLong();
 
-	if (cantCartasJugadas != 52) {
+	if (cantCartasJugadas != 51) {
 		if (this->getJugadores()->buscarJugador(1).getMazo()->getFrente()->getCarta().getValor() >
 			this->getJugadores()->buscarJugador(2).getMazo()->getFrente()->getCarta().getValor()
 			&&
